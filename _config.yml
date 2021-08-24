@@ -12,11 +12,11 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "개린아 공부하자"
+locale                   : "ko-KR"
+title                    : "Jungik's Blog"
 title_separator          : "-"
 subtitle                 :  # site tagline that appears below site title in masthead
 name                     : "Jungik Kim"
@@ -288,3 +288,14 @@ defaults:
       comments: true
       share: true
       related: true
+      sidebar:
+        nav: "docs"
+sidebar:
+  - title: "Title"
+    image: http://placehold.it/350x250
+    image_alt: "image"
+    text: "Some text here."
+  - title: "Another Title"
+    text: "More text here."
+    nav: "docs"
+
