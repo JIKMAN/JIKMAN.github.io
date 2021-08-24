@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "김정익 개발 블로그"
+title                    : "개린아 공부하자"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 :  # site tagline that appears below site title in masthead
 name                     : "Jungik Kim"
 description              : "An amazing website."
 url                      : "https://jikman.github.io"
@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Jungik Kim"
   avatar           : "/assets/images/keyboard.jpg"
-  bio              : "데이터 엔지니어를 꿈꾸는 사람의 개인 블로그"
+  bio              : "데이터 엔지니어를 꿈꾸는 취준생의 개인 블로그"
   location         : "Republic of Korea"
   email            : "wjddlr0303@gmail.com"
   links:
