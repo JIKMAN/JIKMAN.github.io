@@ -10,28 +10,26 @@ toc_sticky: true
 ---
 <br>
 
-# Data pipeline based GCP
+# Data pipeline based on GCP
 
 #### Twitter Open API를 이용한 GCP기반 Data Pipeline 구축 프로젝트
 
 ![image-20210726233733623](https://github.com/JIKMAN/data-engineer-roadmap/blob/master/img/image-20210726233733623.png?raw=true)
 
 ## 프로젝트 설계
-* 개요 : 
+* 개요 
   
   비동기 데이터 처리 및 클라우드 내 개발 환경에 대한 실습을 위해 프로젝트를 진행하였다.
-* 사전 준비 : 
+* 사전 준비 
 
    - GCP 프로젝트 환경
   
    - 스트리밍 데이터 처리 방식, 비동기 처리 기술 및 데이터 웨어하우스 등에 대한 전반적인 이해
-* 진행 과정 :
+* 진행 과정
   
   Twitter에서 제공하는 Open API를 이용해 keyword - 'tesla'로 업로드 되는 실시간 트윗을 Google Cloud Pub/sub을 통해 비동기로 Bigquery에 적재한다. 적재된 데이터를 시각화하고, 만든 어플리케이션을 컨테이너로 배포하는 것까지를 목표로 한다.
-* 프로젝트 결과 :
-  
-  설계한 GCP 기반의 파이프라인 구축을 성공적으로 완성하였다.
-* 피드백 :
+
+* 피드백
   
   처음 구축해보는 파이프라인 프로젝트였기 때문에 부족한 부분이 많이 있었다. 특히, 짜여진 코드를 변형하는 것(물론 공식 사이트의 소스코드를 인용하였지만)과 GCP 내 다양한 프로그램들을 연동하는 부분에 굉장히 애를 먹었지만, 오랜시간 공식문서를 살펴보고 구글링을 하며 문제를 해결해 나갈 수 있었다.
   
@@ -94,7 +92,7 @@ twitterStream.filter(track=['tesla']) # tesla 내용이 들어간 트윗을 스�
    # 설정한 Delivary Type
    Pull
    ```
-   3. Pub/Sub으로 메시지 전송
+* Pub/Sub으로 메시지 전송
    * Streaming Code 추가
 
 ```python

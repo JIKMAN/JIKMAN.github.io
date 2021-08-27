@@ -55,11 +55,11 @@ $h-size-6: 1em !default; // ~16px
    Colors
    ========================================================================== */
 
-$gray: #7a8288 !default;
+$gray: #5f666b !default; //default #7a8288
 $dark-gray: mix(#000, $gray, 50%) !default;
 $darker-gray: mix(#000, $gray, 60%) !default;
-$light-gray: mix(#fff, $gray, 50%) !default;
-$lighter-gray: mix(#fff, $gray, 90%) !default;
+$light-gray: mix(rgb(255, 255, 255), $gray, 50%) !default;
+$lighter-gray: mix(rgba(255, 255, 255, 0.63), $gray, 90%) !default; // #fff
 
 $background-color: #fff !default;
 $code-background-color: #fafafa !default;
