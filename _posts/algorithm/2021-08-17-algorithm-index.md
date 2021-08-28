@@ -38,7 +38,7 @@ toc_sticky: true
 
 
 
-### 비선형 자료구조
+#### 비선형 자료구조
 
 * [트리](https://jikman.github.io/algorithm/tree/)
   * 이진 탐색 트리
@@ -50,7 +50,7 @@ toc_sticky: true
   * [BFS, DFS](https://jikman.github.io/algorithm/graph-serach)
   * [최단경로](https://jikman.github.io/algorithm/dijkstra)
 
-## 알고리즘
+### 알고리즘
 
 * [탐색 알고리즘](https://jikman.github.io/algorithm/search)
 * [정렬 알고리즘](https://jikman.github.io/algorithm/sort)

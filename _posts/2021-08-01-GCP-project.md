@@ -19,23 +19,22 @@ toc_sticky: true
 ## 프로젝트 설계
 * 개요 
   
-  비동기 데이터 처리 및 클라우드 내 개발 환경에 대한 실습을 위해 프로젝트를 진행하였다.
+  클라우드 환경에서 비동기 데이터 처리 및 파이프라인 구축 실습을 위해 프로젝트를 진행하였다.
 * 사전 준비 
 
    - GCP 프로젝트 환경
   
-   - 스트리밍 데이터 처리 방식, 비동기 처리 기술 및 데이터 웨어하우스 등에 대한 전반적인 이해
+   - 스트리밍 데이터 처리 방식, 비동기 처리 및 데이터 웨어하우스 등에 대한 전반적인 이해
 * 진행 과정
   
   Twitter에서 제공하는 Open API를 이용해 keyword - 'tesla'로 업로드 되는 실시간 트윗을 Google Cloud Pub/sub을 통해 비동기로 Bigquery에 적재한다. 적재된 데이터를 시각화하고, 만든 어플리케이션을 컨테이너로 배포하는 것까지를 목표로 한다.
 
 * 피드백
   
-  처음 구축해보는 파이프라인 프로젝트였기 때문에 부족한 부분이 많이 있었다. 특히, 짜여진 코드를 변형하는 것(물론 공식 사이트의 소스코드를 인용하였지만)과 GCP 내 다양한 프로그램들을 연동하는 부분에 굉장히 애를 먹었지만, 오랜시간 공식문서를 살펴보고 구글링을 하며 문제를 해결해 나갈 수 있었다.
+  처음 구축해보는 파이프라인 프로젝트였기 때문에 부족한 부분이 많이 있었다. 특히, 짜여진 코드를 변형하는 것(물론 소스코드를 인용하였지만)과 GCP 내 다양한 프로그램들을 연동하는 부분에 굉장히 애를 먹었지만, 공식문서 및 구글링을 참고하여 문제를 해결해 나갈 수 있었다.
   
   물론 GCP free console을 사용하여 제한된 자원에, 비동기 처리가 필요없는 수준의 트래픽이었지만 메시징 시스템에 큰 흥미를 느끼는 계기가 되기에는 충분했다. 앞으로 kafka, rabbitMQ 등 다양한 메시징 시스템에 대해 공부해보고 기회가 된다면 다른 프로젝트를 통해 해당 기술을 포함한 파이프라인을 구축해 봐야겠다.
   
-  이러한 경험들을 기반삼아 나중에는 데이터 엔지니어로서 1TB 이상의 대규모 트래픽 환경을 구성하는 날이 오길 기대해본다.
 
 
 
@@ -43,7 +42,7 @@ toc_sticky: true
 
 ### 1. Twitter API auth token 발급
 
-* Twitter Developer Platform 공식 문서 : https://developer.twitter.com/en/docs/twitter-api
+* Twitter Developer Platform 공식 문서 - [https://developer.twitter.com/en/docs/twitter-api](https://developer.twitter.com/en/docs/twitter-api)
 
 * GCP IAM 서비스 계정 생성
 
@@ -137,7 +136,7 @@ twitterStream = tweepy.Stream(auth, stream_listener)
 twitterStream.filter(track=['tesla'])
 ```
 
-![pubsub](https://github.com/JIKMAN/data-engineer-roadmap/blob/master/img/pubsub.png?raw=true)
+![pubsub](https://cloud.google.com/pubsub/images/pub_sub_flow.svg)
 
 * 참고 - 공식문서[(https://cloud.google.com/pubsub/docs/overview)](https://cloud.google.com/pubsub/docs/overview)
 
@@ -187,7 +186,7 @@ def hello_pubsub(event, context):
     pubsub_message = base64.b64decode(event['data']).decode('utf-8')	
     print(pubsub_message)		
 ```
-1. __requirement.txt__  작성하여 빅쿼리를 파이썬 pip 패키징 추가
+1. __requirement.txt__  작성하여 pip 패키지로 빅쿼리를 추가
 
 ```python
 # Function dependencies, for example:
@@ -250,10 +249,11 @@ CMD ["python", "tweet.py"]
 * `docker build -t tweetsla`
 * `docker tag tweetsla gcr.io/jungik-ta/tweetsla`
 
-3. Google Container Registry 연동
-4. 이미지 배포
+    아래 과정은 구글 클라우드 SDK 에서 진행하였다.
 
-    배포는 구글 SDK 에서 진행하였다.
+3. Google Container Registry 연동
+
+4. 이미지 배포
 
 * `push gcr.io/jungik-ta/tweetsla`
   
