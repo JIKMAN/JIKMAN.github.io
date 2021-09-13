@@ -34,9 +34,7 @@ toc_sticky: true
 >
 > Old 영역에 있는 객체가 Young 영역의 객체를 참조할 때마다 그에 대한 메타 정보를 표시해 놓는 공간이다. 따라서 Young 영역에서 가비지 컬렉션이 진행될 때, Young 영역 전체를 조회할 필요 없이 카드 테이블만 조회하면 GC의 대상인지 쉽게 식별할 수 있다.
 
-
-
-## Garbage Collection의 동작 방식
+### Garbage Collection의 동작 방식
 
 **1. Stop The World**
 
