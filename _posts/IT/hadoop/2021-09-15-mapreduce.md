@@ -2,7 +2,7 @@
 title:  "[Hadoop] 맵 리듀스의 개념/동작"
 
 categories:
-  - IT
+  - Hadoop
 tags:
   - [HDFS, hadoop, map reduce]
 toc: true
